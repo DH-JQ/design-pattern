@@ -5,6 +5,6 @@ package org.hugh.structural.flyweight;
  * @version 1.0
  * @since 2021/10/10
  */
-public class ConcreteFlyweight {
+public class ConcreteFlyweight implements Flyweight {
 
 }

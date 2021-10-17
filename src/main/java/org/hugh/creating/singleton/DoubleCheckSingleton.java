@@ -19,6 +19,9 @@ public class DoubleCheckSingleton {
             synchronized (DoubleCheckSingleton.class) {
                 // 第二次检验，解决第一次创建时的并发问题
                 if (instance == null) {
+                    // volatile用于解决对象指令重排序问题
+                    // JVM创建对象：申请内存、对象初始化、应用赋值
+                    // 使用volatile后，保证对象完全创建后才赋值
                     instance = new DoubleCheckSingleton();
                 }
             }
